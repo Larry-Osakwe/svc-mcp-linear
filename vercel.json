@@ -1,8 +1,6 @@
 {
-  "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/mcp(.*)", "dest": "api/index.py" }
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api" },
+    { "source": "/mcp/(.*)", "destination": "/api/$1" }
   ]
 }

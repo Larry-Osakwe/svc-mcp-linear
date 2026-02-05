@@ -55,6 +55,9 @@ Authentication: The Linear API token should be provided in the Authorization hea
 # Create the server instance for use by Cloudflare Workers or other entry points
 mcp = create_mcp_server()
 
+# ASGI app for Vercel serverless deployment
+app = mcp.http_app(path="/mcp")
+
 
 # For local development and Render deployment
 if __name__ == "__main__":
